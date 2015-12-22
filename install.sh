@@ -60,10 +60,11 @@ if [ ! "$(id -u nobody)" -eq "$AUSER" ]; then
   usermod -o -u "$AUSER" nobody
 fi
 if [ ! "$(getent group users | cut -d: -f3)" -eq "$AGROUP" ]; then
-  usermod -g "$AGROUP" nobody
+  groupmod -g "$AGROUP" 100 && usermod -g "$AGROUP" nobody
 fi
 
-usermod -d /home/nobody nobody
+usermod -d /config/ nobody
+chown -R nobody:users /config
 EOT
 
 # Add Supervisor startup
