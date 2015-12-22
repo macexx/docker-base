@@ -16,7 +16,7 @@ chown -R nobody:users /config /startup /home/nobody
 
 # Install locales and upgrade
 apt-get update -qq && apt-get upgrade -qy
-apt-get install apt-utils wget locales -qy
+apt-get install apt-utils add-apt-repository wget locales -qy
 update-locale LANG=C.UTF-8 LC_MESSAGES=POSIX
 locale-gen en_US.UTF-8
 dpkg-reconfigure locales
