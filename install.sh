@@ -33,6 +33,8 @@ logfile_maxbytes=10MB
 logfile_backups=3
 loglevel=debug
 nodaemon=true
+user = root
+umask = 002
 
 [include]
 files = /etc/supervisor/conf.d/*.conf
